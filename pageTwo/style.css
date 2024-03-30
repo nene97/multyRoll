@@ -7,15 +7,30 @@ footer {
     width:100%; /* Set width to 100% */
     margin: auto;
     height:100%;
-   
-    
-  
 }
+
 .item{
     max-height: 600px;
 }
-
-
+.content-container{
+  width: 80%;
+  margin: 0 auto;
+}
+.naslovi{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  column-gap: 1.6rem;
+}
+.naslovi::before, .naslovi::after{
+  content: "";
+  height: 2px;
+  background-color: black;
+  display: block;
+}
+.phone{
+  background: gray;
+}
 nav {
   position: fixed;
   top: 0;
