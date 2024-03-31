@@ -10,7 +10,10 @@ footer {
 }
 
 .item{
-    max-height: 600px;
+    height: 600px;
+}
+#bannerImage{
+  height: 600px;
 }
 .content-container{
   width: 80%;
@@ -49,14 +52,16 @@ nav.sticky {
 }
 nav .nav-content {
   height: 50%;
-  max-width: 1200px;
-  margin-left: 70px;
-  display:inline-flex;
-  justify-content: flex-start;
- 
-
+  margin-left: 50px;
 }
-
+.navbar-nav{
+  margin-right: 50px;
+}
+.navbar-nav{
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+} 
 .nav-links li a {
   text-decoration: none;
   color: #0e2431;
@@ -68,7 +73,7 @@ nav .nav-content {
 
 .nav-links li a:hover {
   color: #1d1b12;
-  font-size: 20px;
+  font-size: 18.5px;
 
 }
 
@@ -105,14 +110,34 @@ nav .nav-content {
 
 
 
-
+@media (max-width: 1400px) {
+  .item{
+    height: 400px;
+  }
+  #bannerImage {
+    height: 400px;
+  }
+  .carousel-inner{
+    height: 400px;
+  }
+}
 
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
-  .carousel-caption {
-    display: none; 
+  #bannerImage{
+    height: 200px;
+    width: 2500px;
   }
+ 
+  .carousel-indicators, .carousel-control,  .carousel-caption{
+    display: none;
+  }
+
+  .carousel-inner{
+    height: 200px;
+  }  
+
   nav {
     position: fixed;
     top: 0;
@@ -149,3 +174,4 @@ nav .nav-content {
   }
  
 }
+
