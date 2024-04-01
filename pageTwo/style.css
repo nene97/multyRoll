@@ -1,8 +1,11 @@
 footer {
-    background-color: #f2f2f2;
+    background-color: #d1d9f5b6;
     padding: 25px;
+    width: 1800vh;
   }
-  
+h4,h2{
+  color: #6984e6;
+}
 .carousel-inner img {
     width:100%; /* Set width to 100% */
     margin: auto;
