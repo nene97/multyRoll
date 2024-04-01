@@ -41,7 +41,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  height: 5%;
+  height: 3%;
   width: 100%;
   padding: 5px;
   transition: all 0.4s ease;
@@ -128,6 +128,22 @@ nav .nav-content {
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
+  .clickHeight {}
+  .nav-content{
+    
+  }
+  #navbarNavDropdown{
+    background-color: white;
+    
+  }
+  footer{
+    width: 90%;
+    font-size: small;
+  }
+  footer .bi{
+      width: 60px;
+      height:  60px;
+  }
   #bannerImage{
     height: 200px;
     width: 2500px;
@@ -145,9 +161,9 @@ nav .nav-content {
     position: fixed;
     top: 0;
     left: 0;
-    height: 8%;
+    /* height: 8%; */
     width: 100%;
-    padding: 5px;
+    /* padding: 5px; */
     transition: all 0.4s ease;
   }
   nav.sticky {

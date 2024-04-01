@@ -6,4 +6,3 @@ window.onscroll = function() {
     nav.classList.remove("sticky");
   }
 }
-     
