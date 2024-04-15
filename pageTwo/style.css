@@ -1,8 +1,11 @@
 footer {
-    background-color: #f2f2f2;
+    background-color: #d1d9f5b6;
     padding: 25px;
+    width: 1800vh;
   }
-  
+h4,h2{
+  color: #6984e6;
+}
 .carousel-inner img {
     width:100%; /* Set width to 100% */
     margin: auto;
@@ -38,7 +41,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  height: 5%;
+  height: 4%;
   width: 100%;
   padding: 5px;
   transition: all 0.4s ease;
@@ -125,6 +128,40 @@ nav .nav-content {
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
+ 
+  nav .nav-content{
+
+    margin-left: 0px;
+  }
+  .nav-content{
+    padding-left: 0px;
+  }
+  .container-fluid{
+    padding-left: 0px;
+  }
+  .navbar-nav{
+    padding: 15px;
+  }
+  .container-fluid .navbar-collapse{
+    margin-right: -30px;
+  }
+  .navbar-collapse{
+    /* margin-left: 0px;
+    margin-right: 0px; */
+  }
+  #navbarNavDropdown{
+    background-color: white;
+    min-width: 100%;
+  }
+  
+  footer{
+    width: 90%;
+    font-size: small;
+  }
+  footer .bi{
+      width: 60px;
+      height:  60px;
+  }
   #bannerImage{
     height: 200px;
     width: 2500px;
@@ -142,9 +179,9 @@ nav .nav-content {
     position: fixed;
     top: 0;
     left: 0;
-    height: 8%;
+    /* height: 8%; */
     width: 100%;
-    padding: 5px;
+    /* padding: 5px; */
     transition: all 0.4s ease;
   }
   nav.sticky {
