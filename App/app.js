@@ -42,7 +42,16 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
         //   checkValueEntered()
           const options = data[optionType];
-          let content = `<h2>Choose ${optionType}</h2>`;
+          console.log(optionType);
+          let content
+          if(optionType === "profiles"){
+            content = `<h2>Избери профил</h2>`;
+          } else if(optionType === "glasses"){
+            content = `<h2>Избери стакло</h2>`;
+          } else {
+            content = `<h2>Избери стил</h2>`;
+
+          }
           content += '<div class="popup-grid">';
           options.forEach(option => {
             content += `
