@@ -1,101 +1,100 @@
-let btnShow = document.getElementById("btn");
-let btnShowprofile = document.getElementById("btnProfile");
-let div = document.getElementById("divHidden");
-let divProfile = document.getElementById("divHiddenprofile");
-let btnShowOpen = document.getElementById("btnOpen")
-let resOpen = document.getElementById("resOpen")
-let divHiddenOpen = document.getElementById("divHiddenOpen");
-let btnGlass = document.getElementById("btnGlass")
-let resGlass = document.getElementById("resGlass")
-let divHiddenGlass = document.getElementById("divHiddenGlass");
 
+document.addEventListener("DOMContentLoaded", function() {
+    const profileOption = document.getElementById("profiles");
+    const glassOption = document.getElementById("glass");
+    const styleOption = document.getElementById("style");
+    const popup = document.getElementById("popup");
+    const totalPriceDiv = document.getElementById("total-price");
 
-let result = document.getElementById("result")
+    // let width = document.getElementById("width").value;
+    // let height = document.getElementById("height").value;
+    // console.log(height, width);
+    // function checkValueEntered(){
+    //     if(!height ||  !width) {
+    //         prompt("Please enter all values")
+    //     }
+    // }
 
-btnShow.addEventListener("click" , function(event){
-    if(div.classList.contains("hidden")){
-        div.classList.remove("hidden")
-        div.classList.add("active")
-    }else if(div.classList.contains("active")){
-        div.classList.remove("active")
-        div.classList.add("hidden")
+    let selectedOptions = {
+        "profiles": { price: 0 },
+        "glasses": { price: 0 },
+        "styles": { price: 0 }
+    };
+
+    function showPopup(content) {
+      popup.innerHTML = content;
+      popup.style.display = "block";
     }
-    })
-    
-    let imgOne = document.getElementById("imgONe");
-
-    imgOne.addEventListener("click" , function(event){
-        result.appendChild(imgOne)
-        if(div.classList.contains("active")){
-            div.classList.remove("active")
-            div.classList.add("hidden")
-        }
-    })
-
-    btnShowprofile.addEventListener("click" , function(event){
-        if(divProfile.classList.contains("hidden")){
-            divProfile.classList.remove("hidden")
-            divProfile.classList.add("active")
-        }else if(divProfile.classList.contains("active")){
-            divProfile.classList.remove("active")
-            divProfile.classList.add("hidden")
-        }
+  
+    function closePopup() {
+      popup.style.display = "none";
+    }
+  
+    window.addEventListener("click", function(event) {
+      if (event.target !== popup) {
+        closePopup();
+      }
+    });
+  
+    function loadOptions(optionType, targetDiv) {
+      fetch("options.json")
+        .then(response => response.json())
+        .then(data => {
+        //   checkValueEntered()
+          const options = data[optionType];
+          let content = `<h2>Choose ${optionType}</h2>`;
+          content += '<div class="popup-grid">';
+          options.forEach(option => {
+            content += `
+              <div class="popup-box" data-image="${option.image}" data-description="${option.description}" data-price="${option.price}">
+                <img src="${option.image}" alt="">
+                <p>${option.description}</p>
+              </div>
+            `;
+          });
+          content += '</div>';
+          showPopup(content);
+  
+          popup.querySelectorAll(".popup-box").forEach(optionBox => {
+            optionBox.addEventListener("click", function() {
+              const newImageSrc = optionBox.getAttribute("data-image");
+              const newDescription = optionBox.getAttribute("data-description");
+              const price = parseFloat(optionBox.getAttribute("data-price"));
+              targetDiv.querySelector("img").src = newImageSrc;
+              targetDiv.querySelector("." + optionType + "-description").textContent = newDescription;
+              selectedOptions[optionType] = { price };
+              updateTotalPrice();
+              closePopup();
+            });
+          });
         })
-        
-        let imgOneprofile = document.getElementById("imgOneprofile");
-    
-        imgOneprofile.addEventListener("click" , function(event){
-            resProfil.appendChild(imgOneprofile)
-            if(divProfile.classList.contains("active")){
-                divProfile.classList.remove("active")
-                divProfile.classList.add("hidden")
-            }
-        })
+        .catch(error => console.error("Error loading options:", error));
+    }
 
+    function updateTotalPrice() {
+    //   const width = parseFloat(width);
+    //   const height = parseFloat(height);
+    //   const profilePrice = selectedOptions["profiles"].price;
+    //   const glassPrice = selectedOptions["glasses"].price;
+    //   const area = width * height;
+    //   const totalPrice = (profilePrice + glassPrice) * area;
+    //   totalPriceDiv.textContent = totalPrice.toFixed(2);
+      let totalPrice = 0;
+      for (const optionType in selectedOptions) {
+        totalPrice += selectedOptions[optionType].price;
+      }
+      totalPriceDiv.textContent = totalPrice.toFixed(2);
+    }
 
-        btnOpen.addEventListener("click" , function(event){
-            if(divHiddenOpen.classList.contains("hidden")){
-                divHiddenOpen.classList.remove("hidden")
-                divHiddenOpen.classList.add("active")
-            }else if(divHiddenOpen.classList.contains("active")){
-                divHiddenOpen.classList.remove("active")
-                divHiddenOpen.classList.add("hidden")
-            }
-            })
-            
-            let imgOneOpen = document.getElementById("imgOneOpen");
-        
-            imgOneOpen.addEventListener("click" , function(event){
-                resOpen.appendChild(imgOneOpen)
-                if(divHiddenOpen.classList.contains("active")){
-                    divHiddenOpen.classList.remove("active")
-                    divHiddenOpen.classList.add("hidden")
-                }
-            })
-            
-            
-            btnGlass.addEventListener("click" , function(event){
-            if(divHiddenGlass.classList.contains("hidden")){
-                divHiddenGlass.classList.remove("hidden")
-                divHiddenGlass.classList.add("active")
-            }else if(divHiddenGlass.classList.contains("active")){
-                divHiddenGlass.classList.remove("active")
-                divHiddenGlass.classList.add("hidden")
-            }
-            })
-            
-            let imgOneGlass = document.getElementById("imgOneGlass");
-        
-            imgOneGlass.addEventListener("click" , function(event){
-                resGlass.appendChild(imgOneGlass)
-                if(divHiddenGlass.classList.contains("active")){
-                    divHiddenGlass.classList.remove("active")
-                    divHiddenGlass.classList.add("hidden")
-                }
-            })
-    
-
-
-
-
-
+    profileOption.addEventListener("click", function() {
+      loadOptions("profiles", profileOption);
+    });
+  
+    glassOption.addEventListener("click", function() {
+      loadOptions("glasses", glassOption);
+    });
+  
+    styleOption.addEventListener("click", function() {
+      loadOptions("styles", styleOption);
+    });
+});
