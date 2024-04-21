@@ -1,0 +1,53 @@
+{
+  "profiles": [
+    {
+      "image": "images/profiles/profile.jpg",
+      "description": "Trocal 70 ECO",
+      "price": 100
+    },
+    {
+      "image": "images/profiles/profile.jpg",
+      "description": "Trocal 70 Classic",
+      "price": 100
+    },
+    {
+      "image": "images/profiles/profile.jpg",
+      "description": "Trocal 70 Standard",
+      "price": 50
+    }
+  ],
+  "styles": [
+    {
+      "image": "images/styles/desno.webp",
+      "description": "Десно",
+      "price": 100
+    },
+    { 
+      "image": "images/profiles/profile.jpg",
+      "description": "Лево",
+      "price": 100
+    },
+    {
+      "image": "images/styles/desno.webp",
+      "description": "Десно",
+      "price": 100
+    }
+  ],
+  "glasses": [
+    {
+      "image": "images/glass/window.png",
+      "description": "Затемнето",
+      "price": 100
+    },
+    {
+      "image": "images/glass/window.png",
+      "description": "Затемнето",
+      "price": 100
+    },
+    {
+      "image": "images/glass/window.png",
+      "description": "Затемнето",
+      "price": 100
+    }
+  ]
+}

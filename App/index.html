@@ -6,118 +6,46 @@
         <link rel="stylesheet" href="./style.css" />
     </head>
     <body>
-        
-        
+        <div class="main">
+            <h1>Пресметка на прозори</h1>
+            <div class="containerForSize">
 
-            <div class="main">
-                <h1>Пресметка на прозори</h1>
-            <div class="cont">
-
-
-                <div class="dimensions">
-                    <h3>ширина на прозор</h3>
-                    <input type="text" placeholder="внеси во см:">   
-                    <input type="button" value="внеси">                
-                </div>
-
-                <div class="dimensions">
-                    <h3>висина на прозор</h3>
-                    <input type="text" placeholder="внеси во см:">
-                    <input type="button" value="внеси">                
-
-                </div>
-
-                
-            </div>
-            <div class="cont">
-            <div class="profils">
-                <h3>Одбери профил:</h3>
-                <div id="resProfil">
-
-                </div>
-                
-            <div class="hidden" id="divHiddenprofile">
-                <div id="imgOneprofile">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="" >
-
-                </div>
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                
-
-            </div>
-            <button id="btnProfile">Show</button>
-
-                  
-                </div>
-
-                
-            <div class="profils">
-                <h3>Стил на отварање:</h3>
-                    <div id="resOpen">
-                    
-                </div>
-                
-            <div class="hidden" id="divHiddenOpen">
-                <div id="imgOneOpen">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="" >
-
-                </div>
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                
-
-            </div>
-            <button id="btnOpen">Show</button>
-                  
-                </div>
-                    
-            <div class="profils">
-                <h3>Избери стакло:</h3>
-
-               
-                <div id="resGlass"> </div>
-                
-            <div class="hidden" id="divHiddenGlass">
-                <div id="imgOneGlass">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="" >
-
-                </div>
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                
-
-            </div>
-            <button id="btnGlass">ShowG</button>
-                  
-                </div>
-                
-            </div>
-            <hr>
-            <div id="result">
-                <h3>the selected idetem is: </h3>
+            <div class="dimensions">
+                <h3>ширина на прозор</h3>
+                <input id="width" type="text" placeholder="внеси во см:">   
             </div>
 
-            <div class="hidden" id="divHidden">
-                <div id="imgONe">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="" >
-
-                </div>
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                <img src="http://www.stock-img.com/uploads/snowflake-8.png" alt="">
-                
-
+            <div class="dimensions">
+                <h3>висина на прозор</h3>
+                <input id="height" type="text" placeholder="внеси во см:">
             </div>
-            <button id="btn">Show</button>
-
-
+            </div>
+        <div class="containerForOptions">
             
+            <div class="option" id="profiles">
+                <img src="images/profiles/profile.jpg" class="profiles-picture" alt="">
+                <p>Одбери профил</p>
+                <span class="profiles-description">Trocal 70 ECO</span>
+            </div>
+            <div class="option" id="style">
+                <img src="images/styles/desno.webp" class="style-picture" alt="">
+                <p>Одбери отворање:</p>
+                <span class="styles-description">Десно</span>
+            </div>
+            <div class="option" id="glass">
+                <img src="images/glass/window.png" class="glass-picture" alt="">
+                <p>Одбери стакло:</p>     
+                <span class="glasses-description">Затемнето</span>          
+            </div>
 
-        
+        </div>
+            <div class="price" >
+                <h1>Вкупна цена:<span id="total-price"> 0</span></h1>
+            </div>
+            
+            <div class="popup" id="popup"></div>
+        </div>
+              
         <script src="./app.js"></script>
     </body>
 </html>
