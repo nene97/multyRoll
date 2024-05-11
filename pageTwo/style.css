@@ -142,12 +142,24 @@ nav .nav-content {
   .carousel-inner{
     height: 400px;
   }
+  #roletniContainer > .container > .row , .col-lg{
+    margin: 0 auto;    
+    width: 90%;
+  }
 }
 
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
- 
+  #roletniContainer{
+    width: 100%;
+    text-align: center;
+  }
+   #roletniContainer > .container > .row , .col-lg{
+    margin: 0 auto;    
+    width: 100%;
+  }
+  
   nav .nav-content{
 
     margin-left: 0px;
